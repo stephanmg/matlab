@@ -1,4 +1,7 @@
-T = 1000
+profile clear;
+profile on;
+
+T = 100000
 numInputs = 100
 probInputSpike = 1e-2;
 
@@ -8,7 +11,7 @@ th = 1;
 y = X'*w;
 z = double(y-th);
 
-refPeriod = 10;
+refPeriod = 100;
 lastSpikeTime = -Inf;
 z = zeros(T, 1);
 for t = 1:T
@@ -27,3 +30,5 @@ subplot(4,1,3); plot(z);
 title('Output spikes');
 subplot(4,1,4); plot(w);
 title('Synaptic weights');
+
+profile viewer
