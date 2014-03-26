@@ -16,6 +16,8 @@ lastSpikeTime = -Inf;
 z = zeros(T, 1);
 for t = 1:T
    if (y(t)>th && (t-lastSpikeTime) > refPeriod)
+ 
+   z(t) = [1 2]
    z(t) = 1;
    lastSpikeTime = t;
    end
